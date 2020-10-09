@@ -3,7 +3,7 @@
 <%-- 
     Document   : services
     Created on : 06/10/2020, 12:06:53 PM
-    Author     : evendm
+    Author     : Meg Evenden
 --%>
 
 <sql:query var="result" dataSource="jdbc/HairDress">

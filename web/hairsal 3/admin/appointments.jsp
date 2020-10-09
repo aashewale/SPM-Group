@@ -3,11 +3,15 @@
 <%-- 
     Document   : appointments
     Created on : 06/10/2020, 12:06:38 PM
-    Author     : evendm
+    Author     : Meg Evenden
 --%>
 
 <sql:query var="result" dataSource="jdbc/HairDress">
-    SELECT * FROM Appointment   
+    SELECT booking_id, appointment_time, service_name, home_address, client_name, contact_number, email_address, message
+    FROM appointment 
+    LEFT JOIN customer ON appointment.customer_id = customer.customer_id
+    LEFT JOIN beauty_care_services ON appointment.service_id = beauty_care_services.service_id
+    ORDER BY appointment_time   
 </sql:query>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -1,7 +1,7 @@
 <%-- 
     Document   : home
     Created on : 09/10/2020, 2:11:03 PM
-    Author     : evendm
+    Author     : Meg Evenden
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
