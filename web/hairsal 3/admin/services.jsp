@@ -27,7 +27,7 @@
             <input type="text" name="service_name">
             <br>
             Service Charge:<br>
-            <input type="number" name="service_charge">
+            <input type="text" name="service_charge">
             <br> <br>
             <input type="submit" name="submit">
         </form>
