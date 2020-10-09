@@ -1,0 +1,26 @@
+
+label.text.floatRgr {
+    float: left;
+    color: #fff;
+}
+
+span.slider.round.borderBtn {
+    border: 0.5px solid #8bc34a;
+}
+
+form.p-5.transBg {
+    background: rgba(0,0,0,0.5);
+}
+
+.genderfield{
+    border: 1px solid #fff;
+    background-color: #fff;
+    padding: 7px;
+    float: left;
+    padding-right: 85px;
+}
+
+input.floatRgr.grSpace{
+margin-left: 7px;    
+}
+
