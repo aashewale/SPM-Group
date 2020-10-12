@@ -1,3 +1,4 @@
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%-- 
     Document   : bookingResponse
     Created on : 09/10/2020, 3:57:00 PM
@@ -26,31 +27,40 @@
         
         <%
         Connection c = null;
-        PreparedStatement ps = null;
-        String fname = request.getParameter("fname");
-        String lname = request.getParameter("lname");
-        String email = request.getParameter("email");
-        String phone = request.getParameter("phone");
+        PreparedStatement ps1 = null;
+        PreparedStatement ps2 = null;
+        ResultSet rs = null;
+        int id = Integer.valueOf((String) session.getAttribute("customer_id"));
         String treatment = request.getParameter("treatment");
         String location = request.getParameter("location");
         String date = request.getParameter("date");
         String time = request.getParameter("time");
-        String note = request.getParameter("note");
-
+        String message = request.getParameter("note");
+        String appointment_time = date + " " + time;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             c = DriverManager.getConnection("jdbc:mysql://localhost:3306/Beauty_Care_Services?zeroDateTimeBehavior=convertToNull&useSSL=false", "root", "BWxcoQq7Um^9");
-            ps = c.prepareStatement("insert into appointment(service_id, customer_id) values(?,?)");
-            ps.setString(1, new_name);
-            ps.setInt(2, new_charge);
-            ps.executeUpdate();
+            String query = "SELECT serivce_id FROM Beauty_Care_Services WHERE service_name=?";
+            ps1 = c.prepareStatement(query);
+            ps1.setString(1, treatment);
+            rs = ps1.executeQuery();
+            ps2 = c.prepareStatement("insert into appointment(service_id, customer_id, appointment_time, message) values(?,?,?,?)");
+            ps2.setInt(1, rs.getInt("service_id"));
+            ps2.setInt(2, id);
+            ps2.setString(3, appointment_time);
+            ps2.setString(4, message);
+            ps2.executeUpdate();
         } catch (ClassNotFoundException e) {
             throw new SQLException("JDBC Driver not found.", e);
         } finally {
             try {
-                if (ps != null) {
-                    ps.close();
-                    ps = null;
+                if (ps1 != null) {
+                    ps1.close();
+                    ps1 = null;
+                }
+                if (ps2 != null) {
+                    ps2.close();
+                    ps2 = null;
                 }
                 if (c != null) {
                     c.close();

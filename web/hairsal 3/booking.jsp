@@ -5,9 +5,9 @@
     Created on : 7 Oct, 2020, 8:59:56 PM
     Author     : alishashewale
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
     <head>
         <title>Beth HairDresser &mdash; Beth.com</title>
@@ -48,9 +48,6 @@
                 </div>
                 <div class="site-mobile-menu-body"></div>
             </div>
-
-
-
 
             <header class="site-navbar py-1" role="banner">
 
@@ -102,10 +99,6 @@
 
             </header>
 
-
-
-
-
             <div class="slide-one-item home-slider owl-carousel">
 
                 <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/img_3.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
@@ -123,40 +116,13 @@
 
             </div>
 
-
-
             <div class="site-section bg-light">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7 mb-5">
 
-
-
                             <form method ="post" action="bookingResponse.jsp" class="p-5 bg-white">
                                 <h2 class="mb-4 site-section-heading">Book Now</h2>
-
-                                <div class="row form-group">
-                                    <div class="col-md-6 mb-3 mb-md-0">
-                                        <label class="text-black" for="fname">First Name</label>
-                                        <input type="text" id="fname" class="form-control" placeholder="First Name" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="text-black" for="lname">Last Name</label>
-                                        <input type="text" id="lname" class="form-control" placeholder="Last Name" required>
-                                    </div>
-                                </div>
-
-                                <div class="row form-group">
-                                    <div class="col-md-6 mb-3 mb-md-0">
-                                        <label class="text-black" for="email">Email</label> 
-                                        <input type="email" id="email" class="form-control" placeholder="Email" required>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label class="text-black" for="contact">Contact no.</label> 
-                                        <input type="tel" id="phone" name="phone" class="form-control" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
-                                    </div>
-                                </div>
 
                                 <sql:query var="result" dataSource="jdbc/HairDress">
                                     SELECT service_id, service_name FROM beauty_care_services
@@ -178,7 +144,7 @@
                                 <div class="row form-group">
                                     <div class="col-md-12">
                                         <label class="text-black" for="Location">Location</label> 
-                                        <input type="text" id="location" class="form-control" placeholder="203 Fake St. Mountain View, Melbourne CBD, VIC">
+                                        <input type="text" id="location" class="form-control" placeholder="">
                                     </div>
                                 </div>
 
@@ -197,7 +163,7 @@
                                 <div class="row form-group">
                                     <div class="col-md-12">
                                         <label class="text-black" for="note">Other details you may wish to highlight</label> 
-                                        <textarea name="note" id="note" cols="30" rows="5" class="form-control" placeholder="Write your notes or questions here..."></textarea>
+                                        <textarea name="note" id="note" cols="30" rows="5" class="form-control" placeholder="Write your notes here..."></textarea>
                                     </div>
                                 </div>
                                 <br>

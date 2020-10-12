@@ -6,10 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%
-//int id = Integer.valueOf((String) session.getAttribute("customer_id"));
-%>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -169,7 +165,7 @@
                                 <label class="col-md-3 control-label"></label>
 
                                 <div class="col-md-8">
-                                    <input name="Submit" type="submit">
+                                    <input class="btn btn-primary" name="Save Changes" type="submit">
                                     <span></span>
                                     <input class="btn btn-default" value="Cancel" type="reset">
                                 </div>
@@ -182,14 +178,14 @@
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Name on Invoice:</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" value="" type="text">
+                                    <input class="form-control" name="name" type="text">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-lg-3 control-label"> Biller Email Address:</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" value="" type="text">
+                                    <input class="form-control" name="email" type="text">
                                 </div>
                             </div>
 
@@ -197,7 +193,7 @@
                                 <label class="col-md-3 control-label"></label>
 
                                 <div class="col-md-8">
-                                    <input class="btn btn-primary" value="Save Changes" type="button">
+                                    <input class="btn btn-primary" value="Save Changes" type="submit">
                                     <span></span>
                                     <input class="btn btn-default" value="Cancel" type="reset">
                                 </div>

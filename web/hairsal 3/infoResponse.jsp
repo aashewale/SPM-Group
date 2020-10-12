@@ -28,7 +28,7 @@
         <%
         Connection c = null;
         PreparedStatement ps = null;
-        int customer_id = 2; //UPDATE
+        int customer_id = Integer.valueOf((String) session.getAttribute("customer_id"));
         String client_name = request.getParameter("first_name");
         String home_address = request.getParameter("address");
         String contact_number = request.getParameter("phone");
