@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+//int id = Integer.valueOf((String) session.getAttribute("customer_id"));
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -110,114 +115,70 @@
                     </div>
                 </div>
             </header>		
-
-            <form action="#" class="p-5 bg-white">
+            
                 <h2 class="mb-4 site-section-heading" style="font-size:42px">Update Profile and Biller Information</h2>
                 <div class="row">
-                    <!-- left column -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="text-center">
-                            <img src="http://lorempixel.com/200/200/people/9/" class="avatar img-circle img-thumbnail" alt="avatar">
-                            <h6>Upload a different photo...</h6>
-                            <input type="file" class="text-center center-block well well-sm">
-                        </div>
-                    </div>
                     <!-- edit form column -->
                     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
 
-                        <h3 style="font-size:30px; padding-left:14px">Personal information</h3>
-                        <form class="form-horizontal" role="form">
+                        <h3 style="font-size:30px; padding-left:14px">Personal information - Only fill in fields to be changed</h3>
+                        <form class="form-horizontal" method ="post" action="infoResponse.jsp">
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">First name:</label>
+                                <label class="col-lg-3 control-label">Full name:</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" value="Beth" type="text">
+                                    <input class="form-control" name="client_name" value="" type="text">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Last name:</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" value="" type="text">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Company:</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" value="Beth Hairdresser" type="text">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Email:</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" value="bethemail@gmail.com" type="text">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Time Zone:</label>
-                                <div class="col-lg-8">
-                                    <div class="ui-select">
-                                        <select id="user_time_zone" class="form-control">
-                                            <option value="Hawaii">(GMT-10:00) Australia</option>
-                                            <option value="Alaska">(GMT-09:00) Alaska</option>
-                                            <option value="Pacific Time (US & Canada)">(GMT-08:00) Pacific Time (US & Canada)</option>
-                                            <option value="Arizona">(GMT-07:00) Arizona</option>
-                                            <option value="Mountain Time (US & Canada)">(GMT-07:00) Mountain Time (US & Canada)</option>
-                                            <option value="Central Time (US & Canada)" selected="selected">(GMT-06:00) Central Time (US & Canada)</option>
-                                            <option value="Eastern Time (US & Canada)">(GMT-05:00) Eastern Time (US & Canada)</option>
-                                            <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
+                                                       
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Home Address:</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" value="" type="text">
+                                    <input class="form-control" name="address" type="text">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Contact no:</label>
                                 <div class="col-lg-8">
-                                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+                                    <input type="tel" id="phone" name="phone" class="form-control">
                                 </div>
                             </div>
-
 
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Email:</label>
                                 <div class="col-md-8">
-                                    <input class="form-control" value="bethemail@gmail.com" type="text">
+                                    <input class="form-control" name="email" type="text">
                                 </div>
                             </div>
+                            
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Initial Password:</label>
+                                <label class="col-md-3 control-label">Password:</label>
                                 <div class="col-md-8">
-                                    <input class="form-control" value="11111122333" type="password">
+                                    <input class="form-control" name="password" type="password">
                                 </div>
                             </div>
+                            
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Confirm password:</label>
+                                <label class="col-md-3 control-label">Extra Information:</label>
                                 <div class="col-md-8">
-                                    <input class="form-control" value="11111122333" type="password">
+                                    <input class="form-control" name="related_information" type="text">
                                 </div>
                             </div>
+                            
                             <div class="form-group">
                                 <label class="col-md-3 control-label"></label>
 
                                 <div class="col-md-8">
-                                    <input class="btn btn-primary" value="Save Changes" type="button">
+                                    <input name="Submit" type="submit">
                                     <span></span>
                                     <input class="btn btn-default" value="Cancel" type="reset">
                                 </div>
                             </div> 
                             <br>
-                            <h3 style="font-size:30px; padding-left:14px">Billing information</h3>
-                            <!--
-                                                    <form class="form-horizontal" role="form">
-                                                        <label class="col-lg-3 control-label">Name on Invoice:</label>
-                            
-                                                         <form class="form-horizontal" role="form">-->
+                        </form>
+                        
+                        <h3 style="font-size:30px; padding-left:14px">Billing information</h3>
+                        <form class="form-horizontal" role="form" method ="post" action="billingResponse.jsp">
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Name on Invoice:</label>
                                 <div class="col-lg-8">
@@ -225,57 +186,10 @@
                                 </div>
                             </div>
 
-                            <!--                        <div class="form-group">
-                                                        <label class="col-lg-3 control-label">Company:</label>
-                                                        <div class="col-lg-8">
-                                                            <input class="form-control" value="Beth Hairdresser" type="text">
-                                                        </div>
-                                                    </div>-->
-
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Email:</label>
+                                <label class="col-lg-3 control-label"> Biller Email Address:</label>
                                 <div class="col-lg-8">
                                     <input class="form-control" value="" type="text">
-                                </div>
-                            </div>
-                            <!--                        <div class="form-group">
-                                                        <label class="col-lg-3 control-label">Address:</label>
-                                                        <div class="col-lg-8">
-                                                            <input class="form-control" value="" type="text">
-                                                        </div>
-                                                    </div>
-                                                             
-                                                             
-                                                             
-                                                                     <div class="form-group">
-                                                        <label class="col-lg-3 control-label">City:</label>
-                                                        <div class="col-lg-8">
-                                                            <input class="form-control" value="" type="text">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-lg-3 control-label">State:</label>
-                                                        <div class="col-lg-8">
-                                                            <input class="form-control" value="" type="text">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-lg-3 control-label">Country:</label>
-                                                        <div class="col-lg-8">
-                                                            <input class="form-control" value="" type="text">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-lg-3 control-label">Post Code:</label>
-                                                        <div class="col-lg-8">
-                                                            <input class="form-control" value="" type="text">
-                                                        </div>
-                                                    </div>-->
-
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Preferred mode of payment:</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" value="" placeholder="Cash">
                                 </div>
                             </div>
 
