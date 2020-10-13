@@ -24,7 +24,7 @@
     </head>
     <body>
         <h1>Profile Information successfully updated</h1>
-        <p> Return to <a href="http://localhost:8080/SPM-Group-project/hairsal%203/index.html">Home</a>
+        <p> Return to <a href="http://localhost:8080/SPM-Group-project/hairsal%203/index.html">Home</a></p>
         <%
         Connection c = null;
         PreparedStatement ps = null;

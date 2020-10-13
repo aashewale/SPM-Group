@@ -165,12 +165,10 @@
                                                     </div>    
 
                                                     <div class="row form-group">
-
                                                         <div class="col-md-6">
                                                             <label class="text floatRgr">Home Address</label> 
                                                             <input type="text" name="home_address" class="form-control" required>
                                                         </div>
-
                                                     </div>
 
                                                     <div class="row form-group">

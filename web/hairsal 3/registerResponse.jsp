@@ -23,16 +23,17 @@
         <title>Registration Successful</title>
     </head>
     <body>
-        <h1>Successfully Registered</h1>
+        <h1>Successfully Registered </h1>
+        <p> Return <a href="http://localhost:8080/SPM-Group-project/hairsal%203/index.html">Home</a></h1></p>
         <%
         Connection c = null;
         PreparedStatement ps = null;
-        String client_name = request.getParameter("first_name");
-        String home_address = request.getParameter("address");
+        String client_name = request.getParameter("client_name");
+        String home_address = request.getParameter("home_address");
         String contact_number = request.getParameter("phone");
         String email_address = request.getParameter("email");
         String password = request.getParameter("password");
-        String related_information = request.getParameter("related_information");
+        String related_information = request.getParameter("relevant_information");
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -46,7 +47,7 @@
             ps.setString(6, "");
             ps.executeUpdate();
             if (!related_information.equals("")) {
-                ps = c.prepareStatement("UPDATE customer SET related_information = ? WHERE cemail_address = ?");
+                ps = c.prepareStatement("UPDATE customer SET related_information = ? WHERE email_address = ?");
                 ps.setString(1, related_information);
                 ps.setString(2, email_address);
                 ps.executeUpdate();

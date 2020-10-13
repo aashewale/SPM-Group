@@ -30,7 +30,8 @@
         PreparedStatement ps1 = null;
         PreparedStatement ps2 = null;
         ResultSet rs = null;
-        int id = Integer.valueOf((String) session.getAttribute("customer_id"));
+        //int id = Integer.valueOf((String) session.getAttribute("customer_id"));
+        int id = 8; //UPDATE
         String treatment = request.getParameter("treatment");
         String location = request.getParameter("location");
         String date = request.getParameter("date");
@@ -40,12 +41,15 @@
         try {
             Class.forName("com.mysql.jdbc.Driver");
             c = DriverManager.getConnection("jdbc:mysql://localhost:3306/Beauty_Care_Services?zeroDateTimeBehavior=convertToNull&useSSL=false", "root", "BWxcoQq7Um^9");
-            String query = "SELECT serivce_id FROM Beauty_Care_Services WHERE service_name=?";
+            String query = "SELECT service_id FROM Beauty_Care_Services WHERE service_name=?";
             ps1 = c.prepareStatement(query);
             ps1.setString(1, treatment);
             rs = ps1.executeQuery();
             ps2 = c.prepareStatement("insert into appointment(service_id, customer_id, appointment_time, message) values(?,?,?,?)");
-            ps2.setInt(1, rs.getInt("service_id"));
+            //if (rs.next()) {
+                //ps2.setInt(1, rs.getInt("service_id"));
+            //}
+            ps2.setInt(1, 2); //UPDATE
             ps2.setInt(2, id);
             ps2.setString(3, appointment_time);
             ps2.setString(4, message);
@@ -71,6 +75,5 @@
             }
         }
         %>
-        
     </body>
 </html>

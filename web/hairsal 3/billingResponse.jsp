@@ -26,25 +26,36 @@
         <%
         Connection c = null;
         PreparedStatement ps = null;
+        PreparedStatement ps2 = null;
+        ResultSet rs = null;
         //int customer_id = Integer.valueOf((String) session.getAttribute("customer_id"));
-        int customer_id = 10;
+        int customer_id = 8; //UPDATE
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
             c = DriverManager.getConnection("jdbc:mysql://localhost:3306/Beauty_Care_Services?zeroDateTimeBehavior=convertToNull&useSSL=false", "root", "BWxcoQq7Um^9");
-            ps = c.prepareStatement("IF EXISTS (SELECT * FROM Billing_Information WHERE customer_id = ?) "
-                    + "UPDATE Billing_Information SET (customer_id, name_on_invoice, biller_email_address) VALUES (?,?,?) "
-                    + "ELSE INSERT INTO Billing_Information (customer_id, name_on_invoice, billler_email_address) VALUES (?,?,?)");
+            String stmt = "SELECT invoice_id FROM Billing_Information WHERE customer_id=?";
+            ps = c.prepareStatement(stmt);
             ps.setInt(1, customer_id);
-            ps.setInt(2, customer_id);
-            ps.setString(3, name);
-            ps.setString(4, email);
-            ps.setInt(5, customer_id);
-            ps.setString(6, name);
-            ps.setString(7, email);
-            ps.executeUpdate();
+            rs = ps.executeQuery();
+            if (rs.next()) { //there exists billing info for this customer already
+                int invoice_id = rs.getInt(1);
+                stmt = "UPDATE Billing_Information SET name_on_invoice=?, biller_email_address=? WHERE invoice_id=?";
+                ps2 = c.prepareStatement(stmt);
+                ps2.setString(1, name);
+                ps2.setString(2, email);
+                ps2.setInt(3, invoice_id);
+                ps2.executeUpdate();
+            } else { //insert new entry
+                stmt = "INSERT INTO Billing_Information(customer_id, name_on_invoice, biller_email_address) VALUES (?,?,?)";
+                ps2 = c.prepareStatement(stmt);
+                ps2.setInt(1, customer_id);
+                ps2.setString(2, name);
+                ps2.setString(3, email);
+                ps2.executeUpdate();
+            } 
         } catch (ClassNotFoundException e) {
             throw new SQLException("JDBC Driver not found.", e);
         } finally {
