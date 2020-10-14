@@ -32,4 +32,5 @@
         <p> Book Now: <a href="http://localhost:8080/SPM-Group-project/hairsal%203/booking.jsp">Here</a>
         </p>
         <p> Update Profile: <a href="http://localhost:8080/SPM-Group-project/hairsal%203/UpdateProfile.jsp">Here</a> </p>
+        <p> <a href="logoutServlet">Logout</a> </p>
 </html>

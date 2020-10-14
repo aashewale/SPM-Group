@@ -7,7 +7,7 @@
 --%>
 
 <sql:query var="result" dataSource="jdbc/HairDress">
-    SELECT appointment_time, service_name, location, client_name, contact_number, email_address, message
+    SELECT appointment_time, service_name, home_address, client_name, contact_number, email_address, message
     FROM appointment 
     LEFT JOIN customer ON appointment.customer_id = customer.customer_id
     LEFT JOIN beauty_care_services ON appointment.service_id = beauty_care_services.service_id

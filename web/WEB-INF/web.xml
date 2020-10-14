@@ -4,9 +4,17 @@
         <servlet-name>UserLoginServlet</servlet-name>
         <servlet-class>UserLoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UserLogoutServlet</servlet-name>
+        <servlet-class>UserLogoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserLoginServlet</servlet-name>
         <url-pattern>/hairsal%203/loginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserLogoutServlet</servlet-name>
+        <url-pattern>/hairsal%203/logoutServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
