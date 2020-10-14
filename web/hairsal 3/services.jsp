@@ -1,3 +1,6 @@
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -42,9 +45,6 @@
                 <div class="site-mobile-menu-body"></div>
             </div>
 
-
-
-
             <header class="site-navbar py-1" role="banner">
 
                 <div class="container-fluid">
@@ -58,12 +58,20 @@
 
                                 <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                                     <li class="has-children active">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="booking.html">Book Online</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="index.jsp">Home</a></li>
+                                    <li><a href="services.jsp">Services</a></li>
+                                    <li><a href="about.jsp">About</a></li>
+                                    <li><a href="contact.jsp">Contact</a></li>
+                                    <c:choose>
+                                        <c:when test="${user.loggedIn()}">
+                                            <li><a href="logoutServlet">Log Out</a></li>
+                                            <li><a href="booking.jsp">Book Appointment</a></li>
+                                            <li><a href="UpdateProfile.jsp">Update Profile</a></li>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <li><a href="login.jsp">Login</a></li>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </ul>
                             </nav>
                         </div>

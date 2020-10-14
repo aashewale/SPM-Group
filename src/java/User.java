@@ -39,4 +39,8 @@ public class User {
         return customer_id;
     }
     
+    public boolean loggedIn(){
+        return true;
+    }
+    
 }

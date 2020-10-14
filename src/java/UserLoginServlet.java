@@ -35,7 +35,7 @@ public class UserLoginServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
                 session.setAttribute("customer_id", user.getCustomerID());
-                destPage = "userPortal.jsp";
+                destPage = "index.jsp";
             } else {
                 String message = "Invalid email/password";
                 request.setAttribute("message", message);

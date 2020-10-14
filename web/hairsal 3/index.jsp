@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -40,9 +43,6 @@
                 <div class="site-mobile-menu-body"></div>
             </div>
 
-
-
-
             <header class="site-navbar py-1" role="banner">
 
                 <div class="container-fluid">
@@ -56,12 +56,20 @@
 
                                 <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                                     <li class="has-children active">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="booking.html">Book Online</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="index.jsp">Home</a></li>
+                                    <li><a href="services.jsp">Services</a></li>
+                                    <li><a href="about.jsp">About</a></li>
+                                    <li><a href="contact.jsp">Contact</a></li>
+                                    <c:choose>
+                                        <c:when test="${user.loggedIn()}">
+                                            <li><a href="logoutServlet">Log Out</a></li>
+                                            <li><a href="booking.jsp">Book Appointment</a></li>
+                                            <li><a href="UpdateProfile.jsp">Update Profile</a></li>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <li><a href="login.jsp">Login</a></li>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </ul>
                             </nav>
                         </div>
@@ -107,7 +115,7 @@
                                 <h5 class="text-white font-weight-light text-uppercase">Welcome to Beth HairDresser</h5>
                                 <h2 class="text-white font-weight-light mb-2 display-1">Hair Salon Expert</h2>
 
-                                <p><a href="booking.html" class="btn btn-black py-3 px-5">Book Now!</a></p>
+                                <p><a href="login.jsp" class="btn btn-black py-3 px-5">Book Now!</a></p>
                             </div>
                         </div>
                     </div>
@@ -120,7 +128,7 @@
                             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
                                 <h2 class="text-white font-weight-light mb-2 display-1">Beautiful Hair, Healthy You!</h2>
 
-                                <p><a href="booking.html" class="btn btn-black py-3 px-5">Book Now!</a></p>
+                                <p><a href="login.jsp" class="btn btn-black py-3 px-5">Book Now!</a></p>
                             </div>
                         </div>
                     </div>
@@ -147,8 +155,8 @@
                                 <div class="text-center">
                                     <h2 class="text-primary h2 mb-5">Opening Hours</h2>
                                     <p class="mb-4">
-                                        <span class="d-block font-weight-bold">Mon – Fri </span>
-                                        10:00 AM – 8:30 PM
+                                        <span class="d-block font-weight-bold">Mon ? Fri </span>
+                                        10:00 AM ? 8:30 PM
                                     </p>
 
                                     <p class="mb-4">
@@ -158,7 +166,7 @@
 
                                     <p class="mb-4">
                                         <span class="d-block font-weight-bold">Sunday</span>
-                                        10:00 AM – 8:30 PM
+                                        10:00 AM ? 8:30 PM
                                     </p>
                                 </div>
                             </div>
