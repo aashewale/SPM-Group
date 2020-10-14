@@ -5,21 +5,6 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import = "java.io.*"
-        import = "java.sql.*"
-        import = "javax.sql.*"
-        import = "java.sql.ResultSet"
-        import = "java.sql.Statement"
-        import = "java.sql.Connection"
-        import = "java.sql.DriverManager"
-        import = "java.sql.SQLException"
-        import = "java.util.Enumeration"
-        import = "java.util.logging.Level"
-        import = "java.util.logging.Logger"
-        import = "javax.servlet.*"
-        import = "javax.servlet.annotation.WebServlet"
-        import = "javax.servlet.http.*"
-%>
  
 <!DOCTYPE html>
 <html>

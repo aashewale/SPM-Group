@@ -1,31 +1,35 @@
-<%-- 
-    Document   : registerResponse
-    Created on : 12/10/2020, 3:49:19 PM
-    Author     : evendm
---%>
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import = "java.io.*"
-        import = "java.sql.*"
-        import = "java.util.*"
-        import = "javax.sql.*"
-        import = "java.sql.ResultSet"
-        import = "java.sql.Statement"
-        import = "java.sql.Connection"
-        import = "java.sql.DriverManager"
-        import = "java.sql.SQLException"
-%>
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registration Successful</title>
-    </head>
-    <body>
-        <h1>Successfully Registered </h1>
-        <p> Login <a href="http://localhost:8080/SPM-Group-project/hairsal%203/login.jsp">here</a></h1></p>
-        <%
+/**
+ *
+ * @author evendm
+ */
+public class RegisterServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+ 
+    public RegisterServlet() {
+        super();
+    }
+ 
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
         Connection c = null;
         PreparedStatement ps = null;
         String client_name = request.getParameter("client_name");
@@ -34,7 +38,6 @@
         String email_address = request.getParameter("email");
         String password = request.getParameter("password");
         String related_information = request.getParameter("relevant_information");
-
         try {
             Class.forName("com.mysql.jdbc.Driver");
             c = DriverManager.getConnection("jdbc:mysql://localhost:3306/Beauty_Care_Services?zeroDateTimeBehavior=convertToNull&useSSL=false", "root", "BWxcoQq7Um^9");
@@ -52,8 +55,15 @@
                 ps.setString(2, email_address);
                 ps.executeUpdate();
             }
+            String destPage = "register.jsp";
+            String message = "Registration Successful";
+            request.setAttribute("message", message);
+            RequestDispatcher dispatcher = request.getRequestDispatcher(destPage);
+            dispatcher.forward(request, response);
         } catch (ClassNotFoundException e) {
-            throw new SQLException("JDBC Driver not found.", e);
+            throw new ServletException("JDBC Driver not found.", e);
+        } catch (SQLException e) {
+            throw new ServletException("SQL Error", e);
         } finally {
             try {
                 if (ps != null) {
@@ -65,9 +75,8 @@
                     c = null;
                 }
             } catch (SQLException e) {
-                
+
             }
         }
-        %> 
-    </body>
-</html>
+    }
+}

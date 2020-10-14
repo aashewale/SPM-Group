@@ -118,7 +118,8 @@
                     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
 
                         <h3 style="font-size:30px; padding-left:14px">Personal information - Only fill in fields to be changed</h3>
-                        <form class="form-horizontal" method ="post" action="infoResponse.jsp">
+                        <p> ${message1} </p>
+                        <form class="form-horizontal" method ="post" action="ProfileServlet">
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Full name:</label>
                                 <div class="col-lg-8">
@@ -174,7 +175,8 @@
                         </form>
                         
                         <h3 style="font-size:30px; padding-left:14px">Billing information</h3>
-                        <form class="form-horizontal" role="form" method ="post" action="billingResponse.jsp">
+                        <p> ${message2} </p>
+                        <form class="form-horizontal" role="form" method ="post" action="BillingServlet">
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Name on Invoice:</label>
                                 <div class="col-lg-8">

@@ -135,9 +135,12 @@
 
 
 
-                                                <form action="registerResponse.jsp" class="p-5" style=" background: rgba(0,0,0,0.5);">
+                                                <form action="RegisterServlet" method="post" class="p-5" style=" background: rgba(0,0,0,0.5);">
 
-
+                                                    <h3> ${message} </h3>
+                                                    <p> Have an account? </p>
+                                                    <a href="login.jsp">Login Here</a>
+                                                    <br>
                                                     <div class="row form-group">
                                                         <div class="col-md-6">
                                                             <label class="text floatRgr">Full Name</label>

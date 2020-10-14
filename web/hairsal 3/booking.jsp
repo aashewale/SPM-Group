@@ -121,16 +121,18 @@
                     <div class="row">
                         <div class="col-md-7 mb-5">
 
-                            <form method ="post" action="bookingResponse.jsp" class="p-5 bg-white">
+                            <form method ="post" action="BookingServlet" class="p-5 bg-white">
                                 <h2 class="mb-4 site-section-heading">Book Now</h2>
 
+                                <h3> ${message} </h3>
+                                <br>
                                 <sql:query var="result" dataSource="jdbc/HairDress">
                                     SELECT service_id, service_name FROM beauty_care_services
                                 </sql:query>
 
                                 <div class="row form-group">
                                     <div class="col-md-12">
-                                        <label class="text-black" for="treatment">Service</label> 
+                                        <label class="text-black" for="treatment" name="treatment">Service</label> 
                                         <select name="treatment">
                                             <c:forEach var="row" items="${result.rows}">
                                                 <tr>
