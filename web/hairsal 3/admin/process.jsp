@@ -25,7 +25,7 @@
     <body>
         
         <h1>Service updated - return to: 
-        <a href="http://localhost:8080/SPM-Group-project/hairsal%203/admin/services.jsp">here</a>
+        <a href="http://localhost:8080/SPM-Group-project/hairsal%203/admin/home.jsp">Home</a>
         </h1>
         <%
         Connection c = null;

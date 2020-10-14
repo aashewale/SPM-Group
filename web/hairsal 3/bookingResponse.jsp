@@ -23,17 +23,16 @@
         <title>Booking Confirmation</title>
     </head>
     <body>
-        <h1>Booking Confirmation:</h1>
+        <h1>Booking Confirmation</h1>
         
         <%
         Connection c = null;
         PreparedStatement ps1 = null;
         PreparedStatement ps2 = null;
         ResultSet rs = null;
-        //int id = Integer.valueOf((String) session.getAttribute("customer_id"));
-        int id = 8; //UPDATE
+        int id = (Integer) session.getAttribute("customer_id");
+        //int id = 8; //UPDATE
         String treatment = request.getParameter("treatment");
-        String location = request.getParameter("location");
         String date = request.getParameter("date");
         String time = request.getParameter("time");
         String message = request.getParameter("note");

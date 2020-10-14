@@ -1,6 +1,6 @@
 <%-- 
-    Document   : register
-    Created on : 7 Oct, 2020, 9:00:57 PM
+    Document   : login
+    Created on : 7 Oct, 2020, 9:00:37 PM
     Author     : alishashewale
 --%>
 
@@ -124,97 +124,87 @@
                     <div class="container">
                         <div class="row align-items-center justify-content-center text-center">
 
-                            <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-                                <h2 class="text-white font-weight-light mb-2 display-1">Register</h2>
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                                <h2 class="text-white font-weight-light mb-2 display-1">Login</h2>
 
-
-                                <div class="site-section">
+                                <div class="site-">
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-md-12">
+                                                <form action="loginServlet" method="post" class="p-5" style=" background: rgba(0,0,0,0.5);">
 
-
-
-                                                <form action="registerResponse.jsp" class="p-5" style=" background: rgba(0,0,0,0.5);">
-
-
-                                                    <div class="row form-group">
-                                                        <div class="col-md-6">
-                                                            <label class="text floatRgr">Full Name</label>
-                                                            <input type="text" name="client_name" class="form-control" required>
+                                                    <div class="row form">
+                                                        <div class="col-md-12">                                                           
+                                                            <input type="text" name="email" class="form-control float-ct" placeholder="Email ID" required>
                                                         </div>
                                                     </div>
 
-                                                    <div class="row form-group">
-                                                        <div class="col-md-6">
-                                                            <label class="text floatRgr">Email</label> 
-                                                            <input type="email" name="email" class="form-control" required>
+                                                    <br>
+
+
+                                                    <div>
+                                                        <div class="row form-group">
+                                                            <div class="col-md-12">                                                          
+                                                                <span class="fa fa-lock" aria-hidden="true"></span>
+
+                                                                <input name="password" id="myInput" type="Password" placeholder="Password" class="form-control">
+
+                                                            </div>
                                                         </div>
                                                     </div>
 
-                                                    <div class="row form-group">
-                                                        <div class="col-md-6">
-                                                            <label class="text floatRgr">Password</label> 
-                                                            <input type="password" name="password" class="form-control" required>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row form-group">
-                                                        <div class="col-md-6">
-                                                            <label class="text floatRgr">Contact no.</label> 
-                                                            <input type="tel" name="phone" class="form-control" required>
-                                                        </div>
+                                                    <div>
+                                                        ${message}
                                                     </div>    
-
-                                                    <div class="row form-group">
-                                                        <div class="col-md-12">
-                                                            <label class="text floatRgr">Home Address</label> 
-                                                            <input type="text" name="home_address" class="form-control" required>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row form-group">
-                                                        <div class="col-md-12">
-                                                            <label class="text floatRgr" for="textinput">Extra Information</label> 
-                                                            <textarea type="text" name="relevant_information" cols="30" rows="5" class="form-control"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row form-group">
+                                                    
+                                                    <div class="row form">
                                                         <div class="col-md-12"><br>
-                                                            <input type="submit" value="Register" class="btn btn-primary py-2 px-4 text-white">
+                                                            <input type="submit" value="Login" class="btn btn-primary py-2 px-4 text-white">
                                                         </div>
                                                     </div>
 
+
+                                                    <ul class="list-login">
+                                                        <li>
+                                                            <!--                                                                <a href="#" class="text-right">forgot password?</a>-->
+                                                        </li>
+                                                        <li class="clearfix"></li>
+                                                    </ul>
+                                                    <ul class="list-login-bottom">
+                                                        <li class="">
+                                                            <a href="register.jsp">Create New Account</a>
+                                                        </li>
+                                                        <li class="list-login-bottom">
+                                                        <li class="">
+                                                            <!--                                                                <a href="#">Need Help?</a>-->
+                                                        </li>
+                                                        <!--                                                            <li class="clearfix"></li>-->
+                                                    </ul>
                                                 </form>
                                             </div>
+                                        </div>
+                                        <div class="bottom-grid1">
 
                                         </div>
                                     </div>
+
+                                    </section>
+
+
+                                    <script src="js/jquery-3.3.1.min.js"></script>
+                                    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+                                    <script src="js/jquery-ui.js"></script>
+                                    <script src="js/popper.min.js"></script>
+                                    <script src="js/bootstrap.min.js"></script>
+                                    <script src="js/owl.carousel.min.js"></script>
+                                    <script src="js/jquery.stellar.min.js"></script>
+                                    <script src="js/jquery.countdown.min.js"></script>
+                                    <script src="js/jquery.magnific-popup.min.js"></script>
+                                    <script src="js/bootstrap-datepicker.min.js"></script>
+                                    <script src="js/aos.js"></script>
+
+                                    <script src="js/main.js"></script>
                                 </div>
 
-                                <div class="bottom-grid1">
-
-                                </div>
-                            </div>
-
-                            </section>
-                        </div>
-
-                        <script src="js/jquery-3.3.1.min.js"></script>
-                        <script src="js/jquery-migrate-3.0.1.min.js"></script>
-                        <script src="js/jquery-ui.js"></script>
-                        <script src="js/popper.min.js"></script>
-                        <script src="js/bootstrap.min.js"></script>
-                        <script src="js/owl.carousel.min.js"></script>
-                        <script src="js/jquery.stellar.min.js"></script>
-                        <script src="js/jquery.countdown.min.js"></script>
-                        <script src="js/jquery.magnific-popup.min.js"></script>
-                        <script src="js/bootstrap-datepicker.min.js"></script>
-                        <script src="js/aos.js"></script>
-
-                        <script src="js/main.js"></script>
-
-
-                        </body>
-                        </html>
+                                </body>
+                                </html>

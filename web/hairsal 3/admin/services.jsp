@@ -7,7 +7,7 @@
 --%>
 
 <sql:query var="result" dataSource="jdbc/HairDress">
-    SELECT * FROM Beauty_Care_Services
+    SELECT service_name, service_charge FROM Beauty_Care_Services
 </sql:query>
 
 
@@ -17,6 +17,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="adminstyle.css">
+        <p> <a href="http://localhost:8080/SPM-Group-project/hairsal%203/admin/home.jsp">Home</a></p>
         <title>Services</title>
     </head>
     <body>

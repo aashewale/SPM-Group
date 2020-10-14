@@ -24,7 +24,7 @@
     </head>
     <body>
         <h1>Successfully Registered </h1>
-        <p> Return <a href="http://localhost:8080/SPM-Group-project/hairsal%203/index.html">Home</a></h1></p>
+        <p> Login <a href="http://localhost:8080/SPM-Group-project/hairsal%203/login.jsp">here</a></h1></p>
         <%
         Connection c = null;
         PreparedStatement ps = null;

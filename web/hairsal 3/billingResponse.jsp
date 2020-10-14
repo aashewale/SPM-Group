@@ -22,14 +22,15 @@
         <title>Billing Details Updated</title>
     </head>
     <body>
-        <h1>Billing Details successfully updated - Return </h1>
+        <h1>Billing Details successfully updated</h1>
+        <p> Return to <a href="http://localhost:8080/SPM-Group-project/hairsal%203/loginResponse.jsp">User Portal</a></h1></p>
         <%
         Connection c = null;
         PreparedStatement ps = null;
         PreparedStatement ps2 = null;
         ResultSet rs = null;
-        //int customer_id = Integer.valueOf((String) session.getAttribute("customer_id"));
-        int customer_id = 8; //UPDATE
+        int customer_id = (Integer) session.getAttribute("customer_id");
+        //int customer_id = 8; //UPDATE
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         

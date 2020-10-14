@@ -142,20 +142,13 @@
                                 </div>
 
                                 <div class="row form-group">
-                                    <div class="col-md-12">
-                                        <label class="text-black" for="Location">Location</label> 
-                                        <input type="text" id="location" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-
-                                <div class="row form-group">
                                     <div class="col-md-6 mb-3 mb-md-0">
                                         <label class="text-black" for="date">Appointment Date</label> 
-                                        <input type="text" id="date" class="form-control datepicker px-2" placeholder="Date of visit">
+                                        <input type="text" name="date" class="form-control datepicker px-2" placeholder="Date of visit">
                                     </div>
                                     <div class="col-md-6">
                                         <label class="text-black" for="email">Time</label> 
-                                        <input type="time" id="time" class="form-control" placeholder="Time">
+                                        <input type="time" name="time" class="form-control" placeholder="Time">
                                     </div>
                                 </div>
 
@@ -163,7 +156,7 @@
                                 <div class="row form-group">
                                     <div class="col-md-12">
                                         <label class="text-black" for="note">Other details you may wish to highlight</label> 
-                                        <textarea name="note" id="note" cols="30" rows="5" class="form-control" placeholder="Write your notes here..."></textarea>
+                                        <textarea name="note" cols="30" rows="5" class="form-control" placeholder="Write your notes here..."></textarea>
                                     </div>
                                 </div>
                                 <br>

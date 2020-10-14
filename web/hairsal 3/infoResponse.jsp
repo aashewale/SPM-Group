@@ -24,12 +24,12 @@
     </head>
     <body>
         <h1>Profile Information successfully updated</h1>
-        <p> Return to <a href="http://localhost:8080/SPM-Group-project/hairsal%203/index.html">Home</a></p>
+        <p> Return to <a href="http://localhost:8080/SPM-Group-project/hairsal%203/loginResponse.jsp">User Portal</a></p>
         <%
         Connection c = null;
         PreparedStatement ps = null;
-        int customer_id = Integer.valueOf((String) session.getAttribute("customer_id"));
-        String client_name = request.getParameter("first_name");
+        int customer_id = (Integer) session.getAttribute("customer_id");
+        String client_name = request.getParameter("client_name");
         String home_address = request.getParameter("address");
         String contact_number = request.getParameter("phone");
         String email_address = request.getParameter("email");
@@ -39,37 +39,37 @@
         try {
             Class.forName("com.mysql.jdbc.Driver");
             c = DriverManager.getConnection("jdbc:mysql://localhost:3306/Beauty_Care_Services?zeroDateTimeBehavior=convertToNull&useSSL=false", "root", "BWxcoQq7Um^9");
-            if (!client_name.equals("")) {
+            if (!(client_name.equals(""))) {
                 ps = c.prepareStatement("UPDATE customer SET client_name = ? WHERE customer_id = ?");
                 ps.setString(1, client_name);
                 ps.setInt(2, customer_id);
                 ps.executeUpdate();
             }
-            if (!home_address.equals("")) {
+            if (!(home_address.equals(""))) {
                 ps = c.prepareStatement("UPDATE customer SET home_address = ? WHERE customer_id = ?");
                 ps.setString(1, home_address);
                 ps.setInt(2, customer_id);
                 ps.executeUpdate();
             }
-            if (!email_address.equals("")) {
+            if (!(email_address.equals(""))) {
                 ps = c.prepareStatement("UPDATE customer SET email_address = ? WHERE customer_id = ?");
                 ps.setString(1, email_address);
                 ps.setInt(2, customer_id);
                 ps.executeUpdate();
             }
-            if (!contact_number.equals("")) {
+            if (!(contact_number.equals(""))) {
                 ps = c.prepareStatement("UPDATE customer SET contact_number = ? WHERE customer_id = ?");
                 ps.setString(1, contact_number);
                 ps.setInt(2, customer_id);
                 ps.executeUpdate();
             }
-            if (!password.equals("")) {
+            if (!(password.equals(""))) {
                 ps = c.prepareStatement("UPDATE customer SET initial_password = ? WHERE customer_id = ?");
                 ps.setString(1, password);
                 ps.setInt(2, customer_id);
                 ps.executeUpdate();
             }
-            if (!related_information.equals("")) {
+            if (!(related_information.equals(""))) {
                 ps = c.prepareStatement("UPDATE customer SET related_information = ? WHERE customer_id = ?");
                 ps.setString(1, related_information);
                 ps.setInt(2, customer_id);
