@@ -19,7 +19,7 @@ public class UserDAO {
             ClassNotFoundException {
         String jdbcURL = "jdbc:mysql://localhost:3306/Beauty_Care_Services?zeroDateTimeBehavior=convertToNull&useSSL=false";
         String dbUser = "root";
-        String dbPassword = "BWxcoQq7Um^9";
+        String dbPassword = "BWxcoQq7Um^9"; //this is a unique password
  
         Class.forName("com.mysql.jdbc.Driver");
         Connection connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
@@ -39,6 +39,9 @@ public class UserDAO {
             user.setFullname(result.getString("client_name"));
             user.setEmail(email);
             user.setCustomerID(customer_id);
+            if (email.equals("bethhairdress@gmail.com")){
+                user.setAdmin();
+            }
         }
  
         connection.close();

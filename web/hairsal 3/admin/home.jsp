@@ -13,6 +13,8 @@
         <title>Admin Home</title>
     </head>
     <body>
+        <a href="http://localhost:8080/SPM-Group-project/hairsal%203/index.jsp">Back to Website</a>
+        <br>
         <h1>Beth's Hairdressing</h1>
         <p> Welcome to your administration panel </p>
         <a href="http://localhost:8080/SPM-Group-project/hairsal%203/admin/appointments.jsp">See upcoming appointments</a>

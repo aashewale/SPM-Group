@@ -63,10 +63,14 @@
                                     <li><a href="about.jsp">About</a></li>
                                     <li><a href="contact.jsp">Contact</a></li>
                                     <c:choose>
-                                        <c:when test="${user.loggedIn()}">
+                                        <c:when test="${user.isAdmin()}">
+                                            <li><a href="admin/home.jsp">Admin Panel</a></li>
                                             <li><a href="logoutServlet">Log Out</a></li>
+                                        </c:when>
+                                        <c:when test="${user.loggedIn()}">
                                             <li><a href="booking.jsp">Book Appointment</a></li>
                                             <li><a href="UpdateProfile.jsp">Update Profile</a></li>
+                                            <li><a href="logoutServlet">Log Out</a></li>
                                         </c:when>
                                         <c:otherwise>
                                             <li><a href="login.jsp">Login</a></li>

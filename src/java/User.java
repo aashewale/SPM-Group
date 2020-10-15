@@ -15,6 +15,7 @@ public class User {
     private String email;
     private String password;
     private int customer_id;
+    private boolean admin = false;
     
     public User() {
         fullname = null;
@@ -35,12 +36,20 @@ public class User {
         customer_id = id;
     }
     
+    public void setAdmin(){
+        admin = true;
+    }
+    
     public int getCustomerID(){
         return customer_id;
     }
     
     public boolean loggedIn(){
         return true;
+    }
+    
+    public boolean isAdmin(){
+        return admin;
     }
     
 }
