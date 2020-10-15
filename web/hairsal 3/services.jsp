@@ -115,8 +115,6 @@
 
                             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
                                 <h2 class="text-white font-weight-light mb-2 display-1">See Our Services!</h2>
-
-                                <p><a href="booking.html" class="btn btn-black py-3 px-5">Book Now!</a></p>
                             </div>
                         </div>
                     </div>

@@ -150,17 +150,24 @@
                                         </select>
                                     </div>
                                 </div>
+                                
+                                <sql:query var="result2" dataSource="jdbc/HairDress">
+                                    SELECT booking_id, appointment_time FROM Appointment WHERE booked=false
+                                </sql:query>
 
                                 <div class="row form-group">
-                                    <div class="col-md-6 mb-3 mb-md-0">
-                                        <label class="text-black" for="date">Appointment Date</label> 
-                                        <input type="text" name="date" class="form-control datepicker px-2" placeholder="Date of visit">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="text-black" for="email">Time</label> 
-                                        <input type="time" name="time" class="form-control" placeholder="Time">
+                                    <div class="col-md-12">
+                                        <label class="text-black" for="datetime" name="datetime">Date/Time</label> 
+                                        <select name="datetime">
+                                            <c:forEach var="row" items="${result2.rows}">
+                                                <tr>
+                                                    <option value="${row.booking_id}">${row.appointment_time}</option>
+                                                </tr>
+                                            </c:forEach>
+                                        </select>
                                     </div>
                                 </div>
+                                
 
 
                                 <div class="row form-group">

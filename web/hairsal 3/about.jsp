@@ -100,10 +100,6 @@
 
             </header>
 
-
-
-
-
             <div class="slide-one-item home-slider owl-carousel">
 
                 <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/873082.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
@@ -186,7 +182,6 @@
                     <div class="row text-center">
                         <div class="col-md-12">
                             <h2 class="mb-4 text-black">We want your hair to look fabulous</h2>
-                            <p class="mb-0"><a href="booking.html" class="btn btn-primary py-3 px-5 text-white">Book Appointment Now</a></p>
                         </div>
                     </div>
                 </div>

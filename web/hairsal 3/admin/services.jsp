@@ -7,7 +7,7 @@
 --%>
 
 <sql:query var="result" dataSource="jdbc/HairDress">
-    SELECT service_name, service_charge FROM Beauty_Care_Services
+    SELECT service_name as Service, service_charge as Charge FROM Beauty_Care_Services
 </sql:query>
 
 
@@ -23,7 +23,7 @@
     <body>
         <h1>Beth's Hairdressing Services</h1>
         <p> Add a new service: </p>
-        <form method="post" action="process.jsp">
+        <form method="post" action="ServicesServlet">
             Service Name:<br>
             <input type="text" name="service_name">
             <br>

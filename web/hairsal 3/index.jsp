@@ -114,8 +114,6 @@
                             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
                                 <h5 class="text-white font-weight-light text-uppercase">Welcome to Beth HairDresser</h5>
                                 <h2 class="text-white font-weight-light mb-2 display-1">Hair Salon Expert</h2>
-
-                                <p><a href="login.jsp" class="btn btn-black py-3 px-5">Book Now!</a></p>
                             </div>
                         </div>
                     </div>
@@ -127,8 +125,6 @@
 
                             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
                                 <h2 class="text-white font-weight-light mb-2 display-1">Beautiful Hair, Healthy You!</h2>
-
-                                <p><a href="login.jsp" class="btn btn-black py-3 px-5">Book Now!</a></p>
                             </div>
                         </div>
                     </div>

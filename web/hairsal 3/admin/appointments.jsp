@@ -7,10 +7,11 @@
 --%>
 
 <sql:query var="result" dataSource="jdbc/HairDress">
-    SELECT appointment_time, service_name, home_address, client_name, contact_number, email_address, message
+    SELECT appointment_time as Time, service_name as Service, home_address as Address, client_name as Name, contact_number as Phone, email_address as email, message
     FROM appointment 
     LEFT JOIN customer ON appointment.customer_id = customer.customer_id
     LEFT JOIN beauty_care_services ON appointment.service_id = beauty_care_services.service_id
+    WHERE booked=true
     ORDER BY appointment_time   
 </sql:query>
 
