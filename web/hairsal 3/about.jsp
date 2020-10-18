@@ -1,3 +1,11 @@
+<%-- Template Source Code obtained from: https://colorlib.com/wp/template/hairsal/ --%>
+<%-- 
+    Document   : about
+    Created on : 7 Oct, 2020, 8:59:56 PM
+    Author     : Alisha Shewale (adapted from template)
+--%>
+
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -22,7 +30,6 @@
         <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
-
 
         <link rel="stylesheet" href="css/aos.css">
 
@@ -121,8 +128,6 @@
 
             </div>
 
-
-
             <div class="site-section bg-light">
                 <div class="container">
                     <div class="row justify-content-center mb-5">
@@ -180,7 +185,6 @@
                 </div>
             </div>
 
-
             <div class="site-section border-top">
                 <div class="container">
                     <div class="row text-center">
@@ -191,7 +195,6 @@
                 </div>
             </div>
 
-
             <footer class="site-footer">
                 <div class="container">
                     <div class="row">
@@ -200,8 +203,6 @@
                                 <h3 class="footer-heading mb-4">About HairDresser</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
                             </div>
-
-
 
                         </div>
                         <div class="col-lg-4 mb-5 mb-lg-0">
@@ -226,13 +227,9 @@
                                     </ul>
                                 </div>
                             </div>
-
-
-
                         </div>
 
                         <div class="col-lg-4 mb-5 mb-lg-0">
-
 
                             <div class="mb-5">
                                 <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
@@ -260,10 +257,7 @@
                                 <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
                                 <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
                             </div>
-
-
                         </div>
-
                     </div>
                 </div>
             </footer>

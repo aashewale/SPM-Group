@@ -1,8 +1,6 @@
-
-
 /**
- *
- * @author https://www.codejava.net/coding/how-to-code-login-and-logout-with-java-servlet-jsp-and-mysql
+ * Code adapted from https://www.codejava.net/coding/how-to-code-login-and-logout-with-java-servlet-jsp-and-mysql
+ * @author Alisha Shewale
  */
 
 import java.io.*;
@@ -31,12 +29,12 @@ public class UserLoginServlet extends HttpServlet {
             User user = userDao.checkLogin(email, password);
             String destPage = "login.jsp";
              
-            if (user != null) {
+            if (user != null) { //the login attempt was successful
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
                 session.setAttribute("customer_id", user.getCustomerID());
                 destPage = "index.jsp";
-            } else {
+            } else { //invalid login
                 String message = "Invalid email/password";
                 request.setAttribute("message", message);
             }

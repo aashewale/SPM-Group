@@ -1,3 +1,4 @@
+<%-- Template Source Code obtained from: https://colorlib.com/wp/template/hairsal/ --%>
 <%-- 
     Document   : UpdateProfile
     Created on : 7 Oct, 2020, 8:55:08 PM
@@ -127,11 +128,12 @@
             
                 <h2 class="mb-4 site-section-heading" style="font-size:42px">Update Profile and Biller Information</h2>
                 <div class="row">
-                    <!-- edit form column -->
+                    
                     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
 
                         <h3 style="font-size:30px; padding-left:14px">Personal information - Only fill in fields to be changed</h3>
                         <p> ${message1} </p>
+                        <!-- Form for updating profile, invokes ProfileServlet -->
                         <form class="form-horizontal" method ="post" action="ProfileServlet">
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Full name:</label>

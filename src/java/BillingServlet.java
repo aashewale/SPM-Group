@@ -1,3 +1,8 @@
+/**
+ * Servlet for response to billing details being updated
+ * author: Meg Evenden
+ */
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +16,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 
 @WebServlet(urlPatterns = {"/hairsal%203/BillingServlet}"})
 public class BillingServlet extends HttpServlet {
@@ -33,13 +37,15 @@ public class BillingServlet extends HttpServlet {
         String message;
         String destPage = "UpdateProfile.jsp";
         
-        if (session != null){
+        if (session != null){ //user is logged in
             int customer_id = (Integer) session.getAttribute("customer_id");
             String name = request.getParameter("name");
             String email = request.getParameter("email");
             try {
+                //get connection
                 Class.forName("com.mysql.jdbc.Driver");
                 c = DriverManager.getConnection("jdbc:mysql://localhost:3306/Beauty_Care_Services?zeroDateTimeBehavior=convertToNull&useSSL=false", "root", "BWxcoQq7Um^9");
+                //sql query
                 String stmt = "SELECT invoice_id FROM Billing_Information WHERE customer_id=?";
                 ps = c.prepareStatement(stmt);
                 ps.setInt(1, customer_id);
@@ -83,7 +89,7 @@ public class BillingServlet extends HttpServlet {
 
                 }
             }
-        } else {
+        } else { //user is not logged in
             message = "Error - Please log in";
         }
         request.setAttribute("message2", message);

@@ -1,11 +1,13 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%-- 
     Document   : appointments
     Created on : 06/10/2020, 12:06:38 PM
     Author     : Meg Evenden
 --%>
 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+
+<!-- SQL query to obtain appointment information from database -->
 <sql:query var="result" dataSource="jdbc/HairDress">
     SELECT appointment_time as Time, service_name as Service, home_address as Address, client_name as Name, contact_number as Phone, email_address as email, message
     FROM appointment 
@@ -27,8 +29,7 @@
         <p> <a href="http://localhost:8080/SPM-Group-project/hairsal%203/admin/home.jsp">Home</a></p>
         <h1>Beth's Hairdressing Appointments</h1>
         <p>Upcoming appointments:</p>
-
-            
+        
         <table border="1">
             <!-- column headers -->
             <tr>

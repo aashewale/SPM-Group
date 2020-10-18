@@ -1,4 +1,5 @@
- AOS.init({
+// Template Source Code obtained from: https://colorlib.com/wp/template/hairsal/
+AOS.init({
  	duration: 800,
  	easing: 'slide',
  	once: true

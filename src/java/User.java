@@ -1,15 +1,8 @@
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author evendm
+ * Code adapted from https://www.codejava.net/coding/how-to-code-login-and-logout-with-java-servlet-jsp-and-mysql
+ * @author Alisha Shewale/Meg Evenden
  */
+
 public class User {
     private String fullname;
     private String email;

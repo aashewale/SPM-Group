@@ -1,10 +1,14 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%-- Template Source Code obtained from: https://colorlib.com/wp/template/hairsal/ --%>
 <%-- 
     Document   : booking
     Created on : 7 Oct, 2020, 8:59:56 PM
-    Author     : alishashewale
+    Author     : Alisha Shewale (adapted from template)
 --%>
+
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -29,12 +33,10 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 
-
         <link rel="stylesheet" href="css/aos.css">
 
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/style1.css">
-
 
     </head>
     <body>
@@ -119,8 +121,6 @@
 
                             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
                                 <h2 class="text-white font-weight-light mb-2 display-1">Online Booking</h2>
-
-
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7 mb-5">
-
+                            <!-- Form for booking, invokes BookingServlet -->
                             <form method ="post" action="BookingServlet" class="p-5 bg-white">
                                 <h2 class="mb-4 site-section-heading">Book Now</h2>
 
@@ -172,8 +172,6 @@
                                     </div>
                                 </div>
                                 
-
-
                                 <div class="row form-group">
                                     <div class="col-md-12">
                                         <label class="text-black" for="note">Other details you may wish to highlight</label> 
@@ -186,9 +184,6 @@
                                         <input type="submit" value="Request an Appointment" class="btn btn-primary py-2 px-4 text-white">
                                     </div>
                                 </div>
-
-
-
                             </form>
                         </div>
                         <div class="col-md-5">
@@ -216,7 +211,6 @@
                 </div>
             </div>
 
-
             <div class="site-section">
                 <div class="container">
                     <div class="row text-center">
@@ -228,7 +222,6 @@
                 </div>
             </div>
 
-
             <footer class="site-footer">
                 <div class="container">
                     <div class="row">
@@ -237,9 +230,6 @@
                                 <h3 class="footer-heading mb-4">About HairDresser</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
                             </div>
-
-
-
                         </div>
                         <div class="col-lg-4 mb-5 mb-lg-0">
                             <div class="row mb-5">
@@ -263,13 +253,9 @@
                                     </ul>
                                 </div>
                             </div>
-
-
-
                         </div>
 
                         <div class="col-lg-4 mb-5 mb-lg-0">
-
 
                             <div class="mb-5">
                                 <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
@@ -297,10 +283,7 @@
                                 <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
                                 <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
                             </div>
-
-
                         </div>
-
                     </div>
                 </div>
             </footer>

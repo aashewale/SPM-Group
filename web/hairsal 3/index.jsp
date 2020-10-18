@@ -1,3 +1,10 @@
+<%-- Template Source Code obtained from: https://colorlib.com/wp/template/hairsal/ --%>
+<%-- 
+    Document   : booking
+    Created on : 7 Oct, 2020, 8:59:56 PM
+    Author     : Alisha Shewale (adapted from template)
+--%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 

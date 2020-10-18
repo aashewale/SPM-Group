@@ -1,11 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Servlet for response to profile details being updated
+ * author: Meg Evenden
  */
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -18,10 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author evendm
- */
 @WebServlet(urlPatterns = {"/hairsal%203/ProfileServlet"})
 public class ProfileServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -38,8 +32,9 @@ public class ProfileServlet extends HttpServlet {
         PreparedStatement ps = null;
         String destPage = "UpdateProfile.jsp";
         
-        if (session != null){
+        if (session != null){ //user is logged in
             try {
+                //get connection
                 int customer_id = (Integer) session.getAttribute("customer_id");
                 String client_name = request.getParameter("client_name");
                 String home_address = request.getParameter("address");
@@ -49,6 +44,9 @@ public class ProfileServlet extends HttpServlet {
                 String related_information = request.getParameter("related_information");
                 Class.forName("com.mysql.jdbc.Driver");
                 c = DriverManager.getConnection("jdbc:mysql://localhost:3306/Beauty_Care_Services?zeroDateTimeBehavior=convertToNull&useSSL=false", "root", "BWxcoQq7Um^9");
+                
+                //update non-empty fields
+                
                 if (!(client_name.equals(""))) {
                 ps = c.prepareStatement("UPDATE customer SET client_name = ? WHERE customer_id = ?");
                 ps.setString(1, client_name);
@@ -105,7 +103,7 @@ public class ProfileServlet extends HttpServlet {
                 
                 }
             }
-        } else {
+        } else { //user is not logged in
             String message = "Booking Failed - Log In First";
             request.setAttribute("message1", message);
         }

@@ -1,15 +1,16 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%-- 
     Document   : services
     Created on : 06/10/2020, 12:06:53 PM
     Author     : Meg Evenden
 --%>
 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+
+<!-- SQL query to obtain current services -->
 <sql:query var="result" dataSource="jdbc/HairDress">
     SELECT service_name as Service, service_charge as Charge FROM Beauty_Care_Services
 </sql:query>
-
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

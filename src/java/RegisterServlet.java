@@ -1,8 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Servlet for response to registration details being updated
+ * author: Meg Evenden
  */
+
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -15,10 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author evendm
- */
 public class RegisterServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
  
@@ -38,9 +34,13 @@ public class RegisterServlet extends HttpServlet {
         String email_address = request.getParameter("email");
         String password = request.getParameter("password");
         String related_information = request.getParameter("relevant_information");
+        
         try {
+            //get connection
             Class.forName("com.mysql.jdbc.Driver");
             c = DriverManager.getConnection("jdbc:mysql://localhost:3306/Beauty_Care_Services?zeroDateTimeBehavior=convertToNull&useSSL=false", "root", "BWxcoQq7Um^9");
+            
+            //sql insert
             ps = c.prepareStatement("INSERT into Customer(client_name, home_address, email_address, contact_number, initial_password, related_information) VALUES (?,?,?,?,?,?)"); //UPDATE
             ps.setString(1, client_name);
             ps.setString(2, home_address);
@@ -49,6 +49,8 @@ public class RegisterServlet extends HttpServlet {
             ps.setString(5, password);
             ps.setString(6, "");
             ps.executeUpdate();
+            
+            //if there is related information update the entry
             if (!related_information.equals("")) {
                 ps = c.prepareStatement("UPDATE customer SET related_information = ? WHERE email_address = ?");
                 ps.setString(1, related_information);

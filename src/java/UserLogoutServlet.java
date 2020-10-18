@@ -1,18 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Code adapted from https://www.codejava.net/coding/how-to-code-login-and-logout-with-java-servlet-jsp-and-mysql
+ * @author Alisha Shewale
  */
 
 import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-
-/**
- *
- * @author https://www.codejava.net/coding/how-to-code-login-and-logout-with-java-servlet-jsp-and-mysql
- */
 
 @WebServlet(urlPatterns = {"/hairsal%203/logoutServlet"})
 public class UserLogoutServlet extends HttpServlet {

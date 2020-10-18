@@ -1,6 +1,6 @@
-/**
- *
- * @author 
+/** 
+ * Email code adapted from: https://chillyfacts.com/java-program-to-send-email-using-smtp/
+ * @author Alisha Shewale/Meg Evenden 
  */
 
 import java.io.IOException;
@@ -40,7 +40,7 @@ public class BookingServlet extends HttpServlet {
         int booking_id = Integer.parseInt(request.getParameter("datetime"));
         String note = request.getParameter("note");
         
-        if (session != null){
+        if (session != null){ //user is logged in
             try {
                 // Get connection
                 int customer_id = (Integer) session.getAttribute("customer_id");
@@ -134,7 +134,7 @@ public class BookingServlet extends HttpServlet {
                 
                 }
             }
-        } else {
+        } else { //user is not logged in
             String message = "Booking Failed - Log In First";
             request.setAttribute("message", message);
         }
